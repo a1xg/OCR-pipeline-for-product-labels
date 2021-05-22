@@ -15,10 +15,10 @@ If the image with text contains a lot of unnecessary and needs cropping, set the
 The recognition quality can be improved by setting the desired font size(set_font parameter) to which the text will be scaled. A font that is too large can slow down the recognition speed.
 The language is set in the alpha-3 format or False, if the image language needs to be determined automatically (this will take more time).
 
-If the operating system does not have the Tesseract system variable, then you can manually specify the absolute path to the Tesseract.exe
+If the operating system does not have the Tesseract system variable, then you can manually specify the absolute path to the Tesseract.exe in the file ocr.py.
 
 ```
-pytesseract.pytesseract.tesseract_cmd = 'D:/Program/Tesseract-OCR/tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = '...absolute_path/tesseract.exe'
 ```
 ```
 recognized_text = ocr.getText(text_lang='eng', crop=1, set_font=40)
