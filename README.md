@@ -8,6 +8,10 @@
 - numpy               1.19.2
 
 
+! Написать про счетчик строк
+
+
+
 For multilingual recognition, you need to download the corresponding LSTM language models for Tesseract.
 
 
