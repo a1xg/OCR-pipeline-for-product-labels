@@ -259,7 +259,7 @@ class ImageOCR:
         return self.text
 
     def drawBoxes(self, max_resolution) -> np.ndarray:
-        """The method of drawing of recognized texts and bounding rectangles of the image_to_text"""
+        """Method for drawing bounding rectangles"""
         img_with_boxes = self.img
         for box in self._boxes:
             (x,y,w,h) = box
