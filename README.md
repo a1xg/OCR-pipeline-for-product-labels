@@ -21,7 +21,7 @@ If the operating system does not have the Tesseract system variable, then you ca
 pytesseract.pytesseract.tesseract_cmd = 'D:/Program/Tesseract-OCR/tesseract.exe'
 ```
 ```
-recognized_text = ocr.getText(text_lang=language, crop=1, set_font=40)
+recognized_text = ocr.getText(text_lang='eng', crop=1, set_font=40)
 ```
 
 How it works:
