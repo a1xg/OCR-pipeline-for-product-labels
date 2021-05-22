@@ -14,9 +14,18 @@ For multilingual recognition, you need to download the corresponding LSTM langua
 If the image with text contains a lot of unnecessary and needs cropping, set the parameter crop = 1
 The recognition quality can be improved by setting the desired font size(set_font parameter) to which the text will be scaled. A font that is too large can slow down the recognition speed.
 The language is set in the alpha-3 format or False, if the image language needs to be determined automatically (this will take more time).
+
+If the operating system does not have the Tesseract system variable, then you can manually specify the absolute path to the Tesseract.exe
+
+```
+pytesseract.pytesseract.tesseract_cmd = 'D:/Program/Tesseract-OCR/tesseract.exe'
+```
 ```
 recognized_text = ocr.getText(text_lang=language, crop=1, set_font=40)
 ```
+
+How it works:
+===========
 
 ![Image alt](https://github.com/a1xg/Tesseract-opencv-OCR-for-product-labels/blob/1a890c0a7a59aced0baadf4c1c029fb061a33b12/readme_images/preprocessing.png)
 
