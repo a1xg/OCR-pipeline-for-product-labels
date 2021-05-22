@@ -6,7 +6,7 @@ import pycountry
 from langdetect import detect, DetectorFactory
 
 # Absolute path to tesseract.exe file if environment variable is not working correctly
-pytesseract.pytesseract.tesseract_cmd = 'D:/Program/Tesseract-OCR/tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = '...absolute_path/tesseract.exe'
 
 class ImageOCR:
     def __init__(self, img):
