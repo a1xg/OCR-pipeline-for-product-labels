@@ -1,5 +1,6 @@
 # Tesseract-opencv-OCR-for-product-labels
 - Environment used: 
+- Python              3.8
 - Tesseract           5.0.0-alpha.20200328
 - pytesseract         0.3.6
 - pycountry           20.7.3
@@ -7,25 +8,30 @@
 - langdetect          1.0.8
 - numpy               1.19.2
 
+This module implements the calculation of the average number of lines, the average font size and the ratio of the size of the image to the text block in the image. This is required to automatically adjust the filters applied to the image in order to improve the quality of recognition of images with different font sizes, with a different number of lines and different text segmentation.
 
-! Написать про счетчик строк
-
-
-
-For multilingual recognition, you need to download the corresponding LSTM language models for Tesseract.
-
-
-If the image with text contains a lot of unnecessary and needs cropping, set the parameter crop = 1
-The recognition quality can be improved by setting the desired font size(set_font parameter) to which the text will be scaled. A font that is too large can slow down the recognition speed.
-The language is set in the alpha-3 format or False, if the image language needs to be determined automatically (this will take more time).
+If you want to recognize tex in languages other than English, additional language models must be installed in your catalog of trained LSTM Tesseract models. They can be downloaded from the Tesseract repo https://github.com/tesseract-ocr/tessdata
+If you are using Windows, then you may need to create the TESSDATA_PREFIX system variable indicating the catalog of LSTM models with additional languages.
 
 If the operating system does not have the Tesseract system variable, then you can manually specify the absolute path to the Tesseract.exe in the file ocr.py.
 
 ```
 pytesseract.pytesseract.tesseract_cmd = '...absolute_path/tesseract.exe'
 ```
+How use it:
+Import an image in a format such as jpeg, png.
+Create an instance of class -class- and pass an image to it.
+Call a method getText() passing it the following parameters:
+:text_lang:(str|boolean) Text language according to ISO 3166-1 (alpha-3) standard, or False value if the language should be recognized automatically (automatic recognition slows down text recognition).
+:crop: (boolean)
+If you think that the text on the image takes up all the free space and does not contain foreign objects around, set the Falls flag, if the image is not prepared, select the True flag.
+:set_font:(int)
+The parameter sets the target font size in pixels, it is necessary to optimize the quality and speed of recognition. A large font will increase the quality of recognition, but will significantly slow down the calculations, since the image resolution will be increased proportionally.
+
 ```
-recognized_text = ocr.getText(text_lang='eng', crop=1, set_font=40)
+image = cv2.imread('file_directory')
+ocr = ImageOCR(image)
+recognized_text = ocr.getText(text_lang='eng', crop=True, set_font=40)
 ```
 
 How it works:
