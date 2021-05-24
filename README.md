@@ -8,6 +8,7 @@
 - langdetect          1.0.8
 - numpy               1.19.2
 
+---
 The module is able to select a text scene in images containing foreign objects and cut out text paragraphs separately. Unfortunately, the image skew compensation has not yet been implemented.
 
 The module is able to automatically recognize the language, for which it makes a test recognition of text from the cut sample of the image (the crop factor can be adjusted), the language is recognized and re-recognition is done with an explicit indication of the language. If the image contains several text paragraphs in different languages ​​and the language was not specified, the module will automatically recognize the language of each paragraph.
