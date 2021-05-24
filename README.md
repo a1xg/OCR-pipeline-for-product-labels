@@ -22,9 +22,9 @@ How use it:
 Import an image in a format such as jpeg, png.
 Create an instance of class -class- and pass an image to it.
 Call a method getText() passing it the following parameters:
-- **text_lang** (str|boolean) Text language according to ISO 3166-1 (alpha-3) standard, or False value if the language should be recognized automatically (automatic recognition slows down text recognition).
+- **text_lang** (str|boolean) Text language according to ISO 639-3 (alpha-3) standard, or False value if the language should be recognized automatically (automatic recognition slows down text recognition).
 - **crop** (boolean)
-If you think that the text on the image takes up all the free space and does not contain foreign objects around, set the Falls flag, if the image is not prepared, select the True flag.
+If you think that the text on the image takes up all the free space and does not contain foreign objects around, set the False flag, if the image is not prepared, select the True flag.
 - **set_font** (int)
 The parameter sets the target font size in pixels, it is necessary to optimize the quality and speed of recognition. A large font will increase the quality of recognition, but will significantly slow down the calculations, since the image resolution will be increased proportionally.
 
