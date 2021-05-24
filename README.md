@@ -5,7 +5,7 @@ The module is able to automatically recognize the language, for which it makes a
 
 This module implements the calculation of the average number of lines, the average font size and the ratio of the size of the image to the text block in the image. This is required to automatically adjust the filters applied to the image in order to improve the quality of recognition of images with different font sizes, with a different number of lines and different text segmentation.
 
----
+
 - Environment used: 
 - Python              3.8
 - Tesseract           5.0.0-alpha.20200328
@@ -14,6 +14,7 @@ This module implements the calculation of the average number of lines, the avera
 - opencv-python       4.5.1.48
 - langdetect          1.0.8
 - numpy               1.19.2
+
 If you want to recognize tex in languages other than English, additional language models must be installed in your catalog of trained LSTM Tesseract models. They can be downloaded from the Tesseract repo https://github.com/tesseract-ocr/tessdata
 If you are using Windows, then you may need to create the TESSDATA_PREFIX system variable indicating the catalog of LSTM models with additional languages.
 
