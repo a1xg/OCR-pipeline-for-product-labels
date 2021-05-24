@@ -27,7 +27,9 @@ pytesseract.pytesseract.tesseract_cmd = '...absolute_path/tesseract.exe'
 How use it:
 ---
 Import an image in a format such as jpeg, png.
+
 Create an instance of class -class- and pass an image to it.
+
 Call a method getText() passing it the following parameters:
 - **text_lang** (str|boolean) Text language according to ISO 639-3 (alpha-3) standard, or False value if the language should be recognized automatically (automatic recognition slows down text recognition).
 - **crop** (boolean)
