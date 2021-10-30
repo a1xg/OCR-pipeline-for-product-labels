@@ -40,7 +40,7 @@ The parameter sets the target font size in pixels, it is necessary to optimize t
 ```
 image = cv2.imread('file_directory')
 ocr = ImageOCR(image)
-recognized_text = ocr.getText(text_lang='eng', crop=True, set_font=40)
+recognized_text = ocr.get_text(text_lang='eng', crop=True, set_font=40)
 ```
 
 How it works:
