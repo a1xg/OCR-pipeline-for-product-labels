@@ -5,7 +5,7 @@ import cv2
 import pytesseract
 import pycountry
 from langdetect import detect, DetectorFactory
-from .ocr_settings import *
+from ocr_settings import *
 # Absolute path to tesseract.exe file if environment variable is not working correctly
 pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 
@@ -34,13 +34,18 @@ pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 class ImageOCR:
     def __init__(self, img):
         self.original = img
-        self.img = self._decode_image(img)
+        # if image dtype == numpy.ndarray
+        self.img = img
+        #if image dtype is binary
+        #self.img = self._decode_image(img)
         self.result = [] # output list of dictionaries with recognized text in the format {'lang':'text'}
         self._boxes = []
 
     def _decode_image(self, input_img) -> np.ndarray:
         '''Decode bytes image to numpy format'''
+        print(f'input img:{type(input_img)}')
         decoded_img = cv2.imdecode(np.fromstring(input_img, np.uint8), cv2.IMREAD_UNCHANGED)
+
         return decoded_img
 
     def _encode_image(self, input_img:np.ndarray):
@@ -309,7 +314,7 @@ class ImageOCR:
         :param bytes: (bool) When specifying the parameter, truth will return
         a byte-image, by default it will return an nd.array
         """
-        img = self._decode_image(self.original)
+        img = self.original
 
         boxes = self._boxes # default value - all boxes
         if 'index' in kwargs:

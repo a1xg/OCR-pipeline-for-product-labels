@@ -5,7 +5,6 @@ The module is able to automatically recognize the language, for which it makes a
 
 This module implements the calculation of the average number of lines, the average font size and the ratio of the size of the image to the text block in the image. This is required to automatically adjust the filters applied to the image in order to improve the quality of recognition of images with different font sizes, with a different number of lines and different text segmentation.
 
-
 - Environment used: 
 - Python              3.8
 - Tesseract           5.0.0-alpha.20200328
